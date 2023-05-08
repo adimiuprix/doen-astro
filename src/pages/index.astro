@@ -1,23 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import HomeLayouts from "../layouts/HomeLayouts.astro";
+import AboutLayouts from "../layouts/AboutLayouts.astro";
+import SkillsLayouts from "../layouts/SkillsLayouts.astro";
+import ContactLayouts from "../layouts/ContactLayouts.astro";
+
 const pageTitle = "Beranda";
+
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type ="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content = {Astro.generator} >
-    <title>Beranda</title>
-  </head>
-  <body>
-    <BaseLayout pageTitle={pageTitle}>
-      <h2>Ini isi blog rumah</h2>
-      <p>
-        Halaman berandanya lagi kosong, jadi cek halaman lain aja, menunya ada di atas.
-        terimakasih!
-      </p>
-    </BaseLayout>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <main class="l-main">
+        <HomeLayouts />
+        <AboutLayouts />
+        <SkillsLayouts />
+        <ContactLayouts />
+    </main>    
+</BaseLayout>
