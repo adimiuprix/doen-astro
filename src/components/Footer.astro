@@ -1,16 +1,35 @@
 ---
 import Social from './Social.astro';
 ---
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<!--Footer-->
+<footer class="footer">
+    <p class="footer__title">Adi miuprix</p>
+    <div class="footer__social">
+        <Social platform="twitter" username="adimiuprix" namePlatform="Facebook"/>
+    </div>
+    <p class="footer__copy">&#169; 2023 Miuprix. All rigths reserved</p>
 </footer>
+
+<style>
+/* ===== FOOTER =====*/
+.footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+
+.footer__social {
+  margin-bottom: var(--mb-4);
+}
+
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
+</style>

@@ -1,13 +1,15 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, username, namePlatform } = Astro.props;
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+
+<a href={`https://www.${platform}.com/${username}`} class="footer_platform">
+    {`${namePlatform}`}
+</a>
 
 <style>
-    a {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
-      text-decoration: none;
-    }
-  </style>
+.footer_platform {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2);
+}
+</style>
