@@ -1,6 +1,9 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const pageTitle = "Contact";
 ---
+<BaseLayout pageTitle={pageTitle}>
     <!--Contact-->
     <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
@@ -14,3 +17,4 @@
             </form>
         </div>
     </section>
+</BaseLayout>

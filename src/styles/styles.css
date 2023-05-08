@@ -165,12 +165,6 @@ img {
   color: var(--second-color);
 }
 
-.nav__toggle {
-  color: var(--second-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 /*Active menu*/
 .active::after {
   position: absolute;

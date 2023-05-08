@@ -1,67 +1,24 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Adi",
-  country: "Pranoto",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "magenta";
+const pageTitle = "About";
 ---
+<BaseLayout pageTitle={pageTitle}>
+    <!--About-->
+    <section class="about section">
+        <h2 class="section-title">About</h2>
+  
+        <div class="about__container bd-grid">
+            <div class="about__img">
+                <img src="assets/img/about.png" alt="">
+            </div>
+            
+            <div>
+                <h2 class="about__subtitle">Introduce</h2>
+                <p class="about__text">I am a graduate of Darmajaya Institute of Informatics and Business Bandar Lampung with a major in Information Systems. I am someone who enjoys challenges, can adapt well, learn new things quickly, and have good problem-solving skills.</p><br>           
+                <p class="about__text">From my experience as a freelancer, I am able to work under pressure, build good relationships with clients, and manage time effectively.</p>           
+            </div>                                   
+        </div>
+    </section>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type ="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content = {Astro.generator} >
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor}}> 
-        h1 {
-          color: purple;
-          font-size: 4rem;
-        }
-        .skill {
-            color: var(--skillColor);
-            font-weight: bold;
-        }
-    </style>
-  </head>
-  <body>
-    <Header />
-
-    <h1>Tentang aku</h1>
-    <h2>Aku itu hebat!!</h2>
-
-    <p>Here are a few facts about me:</p>
-    <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {identity.hobbies.length >= 2 && 
-        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-    } 
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-    
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-    <Footer />
-  </body>
-</html>
+</BaseLayout>
