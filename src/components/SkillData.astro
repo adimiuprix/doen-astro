@@ -3,13 +3,30 @@ const { namaskill, skillicon, persenskill } = Astro.props;
 ---
 
 <div class="skills__data">
-    <div class="skills__names">
+    <div class="skills-names">
         <i class=`bx bxl-${skillicon} skills__icon`></i>
         <span class="skills__name">{ namaskill }</span>
     </div>
-    <div class="skills__bar skills__html">
-    </div>
+    <div class="skills-bar skills__bar"></div>
     <div>
         <span class="skills__percentage">{ persenskill }%</span>
     </div>
 </div>
+
+<style>
+    .skills-names {
+      display: flex;
+      align-items: center;
+    }
+  
+    .skills-bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: #5665ae;
+      height: .25rem;
+      border-radius: .5rem;
+      z-index: -10;
+      width: 100%;
+    }
+</style>
