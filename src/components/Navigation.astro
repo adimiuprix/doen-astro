@@ -12,6 +12,19 @@
 </div>
 
 <style>
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: .5s;
+  }
+}
+
 .nav__item {
   margin-bottom: var(--mb-4);
 }
@@ -45,5 +58,35 @@
   top: 2rem;
   background-color: var(--first-color);
 }
-
 </style>
+
+<script>
+    // Menambahkan kelas "active" ke tautan navigasi yang sesuai dengan halaman saat ini
+    function setActiveNav() {
+      const currentPath = window.location.pathname; // Mengambil path halaman saat ini
+    
+      // Mencari elemen tautan navigasi dengan href yang sama dengan path halaman saat ini
+      const navLink = document.querySelector(`.nav__link[href="${currentPath}"]`);
+    
+      // Menambahkan kelas "active" ke tautan navigasi yang ditemukan (jika ada)
+      if (navLink) {
+        navLink.classList.add('active');
+      }
+    }
+  
+      // Memanggil fungsi setActiveNav setiap kali halaman dimuat
+      window.addEventListener('load', setActiveNav);
+
+      /*===== MENU SHOW =====*/ 
+      const showMenu = (toggleId, navId) =>{
+          const toggle = document.getElementById(toggleId),
+          nav = document.getElementById(navId)
+
+          if(toggle && nav){
+              toggle.addEventListener('click', ()=>{
+                  nav.classList.toggle('show')
+              })
+          }
+      }
+      showMenu('nav-toggle','nav-menu')
+</script>
